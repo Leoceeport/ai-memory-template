@@ -1,0 +1,11 @@
+{
+  "_說明": "把 hooks 這段合併進 ~/.claude/settings.json；MEMORY_REPO 改成倉庫路徑。SessionStart 開工注入索引，Stop 每天第一次發現未提交變更時提醒寫回。",
+  "hooks": {
+    "SessionStart": [
+      { "matcher": "", "hooks": [ { "type": "command", "command": "MEMORY_REPO=$HOME/memory sh $HOME/memory/hooks/session_start.sh" } ] }
+    ],
+    "Stop": [
+      { "matcher": "", "hooks": [ { "type": "command", "command": "MEMORY_REPO=$HOME/memory sh $HOME/memory/hooks/stop_reminder.sh" } ] }
+    ]
+  }
+}

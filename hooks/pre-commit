@@ -1,0 +1,3 @@
+#!/bin/sh
+# git pre-commit：擋金鑰。由 scripts/install_hooks.sh 安裝到 .git/hooks/pre-commit
+exec "$(git rev-parse --show-toplevel)/scripts/scan_secrets.sh"
